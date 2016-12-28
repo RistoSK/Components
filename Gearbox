@@ -1,0 +1,34 @@
+public class Gearbox extends Component {
+	
+	private int numberOfGears;
+	private boolean isManual;
+	
+
+	public Gearbox(int numberOfGears, boolean isManual ,String id, String manufacturer, double weigth ) {
+		super(id , manufacturer , weigth);
+		this.numberOfGears = numberOfGears;
+		this.isManual = isManual;
+		
+	}
+
+	public int getNumberOfGears() {
+		return numberOfGears;
+	}
+
+	public void setNumberOfGears(int numberOfGears) {
+		this.numberOfGears = numberOfGears;
+	}
+
+	public boolean getIsManual() {
+		return isManual;
+	}
+
+	public void setIsManual(boolean isManual) {
+		this.isManual = isManual;
+	}
+
+	
+	public String toString() {
+		return "Gearbox id=" + super.getId() +", manufacturer=" + super.getManufacturer() + ", weigth=" + super.getWeigth() + ", numberOfGears=" + numberOfGears + ", isManual=" + isManual + "";
+	}
+}
