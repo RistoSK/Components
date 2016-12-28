@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+public class ComponentProgram {
+	public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	boolean moa1 = false;
+	boolean moa2 = false;
+	
+	System.out.print("Type an id: ");
+	String id1 = input.nextLine();
+	System.out.print("Type a manufacturer: ");
+	String manufacturer1 = input.nextLine();
+	System.out.print("Type a weigth: ");
+	Double weigth1 = input.nextDouble();
+	input.nextLine();
+	System.out.print("Type a number of gears: ");
+	int gears1  = input.nextInt();
+	input.nextLine();
+	System.out.print("Manual or Automatic (M/A) : ");
+	String moa  = input.nextLine();
+	
+	if (moa.equals("M"))
+	{
+		 moa1 = true;
+	}
+	else if (moa.equals("A"))
+	{
+		 moa1 = false;
+	}
+	
+	System.out.print(" ");
+	System.out.print("Type an id: ");
+	String id2 = input.nextLine();
+	System.out.print("Type a manufacturer: ");
+	String manufacturer2 = input.nextLine();
+	System.out.print("Type a weigth: ");
+	Double weigth2 = input.nextDouble();
+	input.nextLine();
+	System.out.print("Type a number of gears: ");
+	int gears2  = input.nextInt();
+	input.nextLine();
+	System.out.print("Manual or Automatic (M/A) : ");
+	String moa0  = input.nextLine();
+	if (moa0.equals("M"))
+	{
+		 moa2 = true;
+	}
+	else if (moa0.equals("A"))
+	{
+		 moa2 = false;
+	}
+	
+	Gearbox gear1 = new Gearbox (gears1 , moa1 , id1 , manufacturer1 , weigth1 );
+	Gearbox gear2 = new Gearbox (gears2 , moa2 , id2 , manufacturer2 , weigth2 );
+	System.out.println(gear1.toString());
+	System.out.println(gear2.toString());
+}
+}
+
+
+
+
+
+public class Gearbox extends Component {
+	
+	private int numberOfGears;
+	private boolean isManual;
+	
+
+	public Gearbox(int numberOfGears, boolean isManual ,String id, String manufacturer, double weigth ) {
+		super(id , manufacturer , weigth);
+		this.numberOfGears = numberOfGears;
+		this.isManual = isManual;
+		
+	}
+
+	public int getNumberOfGears() {
+		return numberOfGears;
+	}
+
+	public void setNumberOfGears(int numberOfGears) {
+		this.numberOfGears = numberOfGears;
+	}
+
+	public boolean getIsManual() {
+		return isManual;
+	}
+
+	public void setIsManual(boolean isManual) {
+		this.isManual = isManual;
+	}
+
+	
+	public String toString() {
+		return "Gearbox id=" + super.getId() +", manufacturer=" + super.getManufacturer() + ", weigth=" + super.getWeigth() + ", numberOfGears=" + numberOfGears + ", isManual=" + isManual + "";
+	}
+}
