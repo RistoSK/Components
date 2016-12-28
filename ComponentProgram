@@ -54,5 +54,5 @@ public class ComponentProgram {
 	Gearbox gear2 = new Gearbox (gears2 , moa2 , id2 , manufacturer2 , weigth2 );
 	System.out.println(gear1.toString());
 	System.out.println(gear2.toString());
+   }
  }
-}
